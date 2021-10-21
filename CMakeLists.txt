@@ -28,5 +28,5 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 yarp_configure_plugins_installation(yarp-device-fake-depth-camera-from-rgbd-data)
 
 add_subdirectory(fakeDepthCameraFromRGBDDataDriver)
-add_subdirectory(getImagesXtionUsb)
-add_subdirectory(share)
+#add_subdirectory(getImagesXtionUsb)
+#add_subdirectory(share)

@@ -298,7 +298,7 @@ bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getRgbImage(FlexImage& rgbIma
         previousTime = currentTime;
     }
 
-    std::string rgbImageDirectory = "/home/elisabeth/data/teoImages/color/";
+    std::string rgbImageDirectory = "/home/elisabeth/repos/fakeDepthCameraFromRGBDData/color/";
     std::string imageTest;
     imageTest.insert(0,rgbImageDirectory);
     imageTest.append(frame);
@@ -331,7 +331,7 @@ bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getRgbImage(FlexImage& rgbIma
 bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getDepthImage(yarp::sig::ImageOf<yarp::sig::PixelFloat>& depthImage, Stamp* timeStamp)
 {
 
-    std::string depthImageDirectory = "/home/elisabeth/data/teoImages/depth/";
+    std::string depthImageDirectory = "/home/elisabeth/repos/fakeDepthCameraFromRGBDData/depth/";
     std::string imageTest;
     imageTest.insert(0,depthImageDirectory);
     imageTest.append(frame);
@@ -344,7 +344,7 @@ bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getDepthImage(yarp::sig::Imag
        return false;
     }
 
-    float  factor = 0.001;
+    float  factor = 0.0001;
 
     short* srcRawImage;
     srcRawImage = inputImage.ptr<short>();
