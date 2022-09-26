@@ -13,25 +13,25 @@ The fakeDepthCameraFromRGBDData device acts as a fake rgbd camera. It gathers co
 
 Launch a RGBDSensorWrapper with the wrapped subdevice fakeDepthCameraFromRGBDDataDriver.
 ```
-yarpdev --device RGBDSensorWrapper --name /xtion --subdevice fakeDepthCameraFromRGBDDataDriver
+yarpdev --device RGBDSensorWrapper --name /realsense2 --subdevice fakeDepthCameraFromRGBDDataDriver
 ```
 The parameters:
 - device: network wrapper device (RGBDSensorWrapper). 
-- name:  name of the YARP port opened by the server will start with this prefix. /xtion for faking the real camera.
+- name:  name of the YARP port opened by the server will start with this prefix. /realsense2 for faking the real camera.
 - subdevice:  the low-level device driver reading the images (the fakeDepthCameraFromRGBDDataDriver device in this case)
 
 Open yarpview GUIS to visualize the images received by the fakeDepthCameraFromRGBDDataDriver.
 ```
-yarpview --name /yarpview/xtion/depthImage:i
-yarpview --name /yarpview/xtion/rgbImage:i
+yarpview --name /yarpview/realsense2/depthImage:i
+yarpview --name /yarpview/realsense2/rgbImage:i
 ```
 
 Connect the yarp ports from the fakeDepthCameraFromRGBDDataDriver to the viewers.
 
 ```
-yarp connect /xtion/rgbImage:o /yarpview/xtion/rgbImage:i tcp
+yarp connect /realsense2/rgbImage:o /yarpview/realsense2/rgbImage:i tcp
 
-yarp connect /xtion/depthImage:o /yarpview/xtion/depthImage:i udp+recv.portmonitor+type.dll+file.depthimage2
+yarp connect /realsense2/depthImage:o /yarpview/realsense2/depthImage:i udp+recv.portmonitor+type.dll+file.depthimage_to_rgb
 ```
 
 Expected result:
