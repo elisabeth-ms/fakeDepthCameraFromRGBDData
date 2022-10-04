@@ -182,10 +182,10 @@ bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::setRgbMirroring(bool mirror)
 bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getRgbIntrinsicParam(Property &intrinsic)
 {
     intrinsic.put("physFocalLength", 0.0);
-    intrinsic.put("focalLengthX", 923.0308837890625);
-    intrinsic.put("focalLengthY", 922.341552734375);
-    intrinsic.put("principalPointX", 641.8447265625);
-    intrinsic.put("principalPointY", 355.172515869140625);
+    intrinsic.put("focalLengthX", 615.35394287109375);
+    intrinsic.put("focalLengthY", 614.89434814453125);
+    intrinsic.put("principalPointX", 321.229827880859375);
+    intrinsic.put("principalPointY", 236.78167724609375);
     intrinsic.put("distortionModel", "none");
     intrinsic.put("k1", 0);
     intrinsic.put("k2", 0);
@@ -216,10 +216,10 @@ bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getDepthFOV(double &horizonta
 bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getDepthIntrinsicParam(Property &intrinsic)
 {
     intrinsic.put("physFocalLength", 0.0);
-    intrinsic.put("focalLengthX", 633.1416015625);
-    intrinsic.put("focalLengthY", 633.1416015625);
-    intrinsic.put("principalPointX", 642.083984375);
-    intrinsic.put("principalPointY", 358.1337890625);
+    intrinsic.put("focalLengthX", 380.40753173828125);
+    intrinsic.put("focalLengthY", 380.40753173828125);
+    intrinsic.put("principalPointX", 321.809112548828125);
+    intrinsic.put("principalPointY", 238.8140869140625);
     intrinsic.put("distortionModel", "plumb_bob");
     intrinsic.put("k1", 0);
     intrinsic.put("k2", 0);
@@ -296,7 +296,7 @@ bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getRgbImage(FlexImage &rgbIma
     //     previousTime = currentTime;
     // }
 
-    std::string rgbImageDirectory = "/home/elisabeth/data/realsense2/rgbImage1/";
+    std::string rgbImageDirectory = "/home/elisabeth/data/realsense2/rgbImage2/";
     std::string imageTest;
     imageTest.insert(0, rgbImageDirectory);
     imageTest.append(frame);
@@ -330,7 +330,7 @@ bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getRgbImage(FlexImage &rgbIma
 bool yarp::dev::fakeDepthCameraFromRGBDDataDriver::getDepthImage(yarp::sig::ImageOf<yarp::sig::PixelFloat> &depthImage, Stamp *timeStamp)
 {
 
-    std::string depthImageDirectory = "//home/elisabeth/data/realsense2/depthImage1/";
+    std::string depthImageDirectory = "/home/elisabeth/data/realsense2/depthImage2/";
     std::string imageTest;
     imageTest.insert(0, depthImageDirectory);
     imageTest.append(frame);
